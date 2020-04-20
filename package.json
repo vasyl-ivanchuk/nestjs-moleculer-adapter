@@ -1,10 +1,10 @@
 {
   "name": "nestjs-moleculer-adapter",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Nest.js app with an adapter to interact with moleculer.js services.",
+  "author": "Vasyl Ivanchuk",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
