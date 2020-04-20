@@ -1,13 +1,12 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { ServiceBroker } from 'moleculer';
+import { config } from './config'
 
 @Injectable()
 export class MoleculerAdapter implements OnModuleInit, OnModuleDestroy {
     private broker: ServiceBroker;
     constructor() {
-        this.broker = new ServiceBroker({
-            transporter: 'AMQP',
-        });
+        this.broker = new ServiceBroker(config);
 
         const servicePaths = ['./src/moleculer/services/test.service.ts'];
         servicePaths.forEach(servicePath => this.broker.loadService(servicePath));
